@@ -78,7 +78,7 @@
 
 @media (max-width: 768px) {
   .animate-marquee {
-    animation: marquee 21s linear infinite;
+    animation: marquee 10s linear infinite;
   }
 }
 
