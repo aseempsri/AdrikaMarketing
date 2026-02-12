@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToasterComponent } from './components/ui/toaster/toaster.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet, ToasterComponent],
+  template: `
+    <router-outlet />
+    <app-toaster />
+  `,
 })
-export class AppComponent {
-  title = 'AdrikaMarketing';
-}
+export class AppComponent {}
