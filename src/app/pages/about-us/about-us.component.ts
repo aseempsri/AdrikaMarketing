@@ -63,9 +63,9 @@ const values = [
             </p>
           </div>
           <div
-            class="h-80 bg-gradient-to-br from-primary/10 via-secondary to-background rounded-lg flex items-center justify-center border border-border"
+            class="h-80 bg-gradient-to-br from-primary/10 via-secondary to-background rounded-lg flex items-center justify-center border border-border overflow-hidden"
           >
-            <span class="text-6xl font-heading font-black text-foreground/10 uppercase">Adrika</span>
+            <img src="/logo.png" alt="Adrika Marketing" class="max-w-full max-h-full object-contain p-8" />
           </div>
         </div>
       </div>

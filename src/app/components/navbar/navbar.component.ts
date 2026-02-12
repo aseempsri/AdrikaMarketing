@@ -21,7 +21,9 @@ const navLinks = [
     >
       <div class="container mx-auto px-6 py-4 flex items-center justify-between">
         <a routerLink="/" class="flex items-center gap-2">
-          <img src="/logo.png" alt="Adrika Marketing" class="h-10 w-auto" />
+          <span class="text-2xl font-heading font-bold tracking-tight text-foreground">
+            ADRIKA<span class="text-primary"> MARKETING</span>
+          </span>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
