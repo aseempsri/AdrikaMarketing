@@ -62,10 +62,8 @@ const values = [
               relentless innovation, deep client partnerships, and a commitment to delivering measurable results.
             </p>
           </div>
-          <div
-            class="h-80 bg-gradient-to-br from-primary/10 via-secondary to-background rounded-lg flex items-center justify-center border border-border overflow-hidden"
-          >
-            <img src="/logo.png" alt="Adrika Marketing" class="max-w-full max-h-full object-contain p-8" />
+          <div class="flex items-center justify-center">
+            <img src="/logo.png" alt="Adrika Marketing" class="w-[150%] h-auto object-contain" />
           </div>
         </div>
       </div>
