@@ -63,7 +63,7 @@ const values = [
             </p>
           </div>
           <div class="flex items-center justify-center">
-            <img src="/logo.png" alt="Adrika Marketing" class="w-[150%] h-auto object-contain" />
+            <img src="/logo.png" alt="Adrika Marketing" class="w-[105%] h-auto object-contain" />
           </div>
         </div>
       </div>
