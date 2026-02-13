@@ -236,17 +236,17 @@ const awards = [
           <div class="flex animate-marquee-infinite whitespace-nowrap items-center w-max">
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
           </div>
@@ -339,7 +339,7 @@ const awards = [
               <div class="flex flex-col items-center text-center">
                 <!-- Award Icon (Feather & Cup) -->
                 <div class="mb-4 relative">
-                  <img src="/images/award.png" alt="Award" class="w-16 h-16 object-contain" />
+                  <img [src]="getAssetPath('images/award.png')" alt="Award" class="w-16 h-16 object-contain" />
                 </div>
                 <!-- Award Category (Small, Light Gray) -->
                 <p class="text-xs font-heading uppercase tracking-wider text-muted-foreground mb-2">
@@ -409,6 +409,14 @@ export class IndexComponent implements OnInit, OnDestroy {
   );
 
   private intervalId: ReturnType<typeof setInterval> | null = null;
+
+  getAssetPath(path: string): string {
+    if (path.startsWith('http://') || path.startsWith('https://')) return path;
+    const baseHref = document.querySelector('base')?.getAttribute('href') || '/';
+    const base = baseHref.endsWith('/') ? baseHref : baseHref + '/';
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return base + cleanPath;
+  }
 
   ngOnInit() {
     this.intervalId = setInterval(() => {

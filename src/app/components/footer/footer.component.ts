@@ -13,7 +13,7 @@ import { LucideAngularModule } from 'lucide-angular';
           <div>
             <div class="flex items-center gap-3 mb-4">
               <div class="logo-flow-container">
-                <img src="/logo.png" alt="Adrika Marketing Logo" class="h-[60px] w-auto object-contain relative z-10" />
+                <img [src]="getAssetPath('logo.png')" alt="Adrika Marketing Logo" class="h-[60px] w-auto object-contain relative z-10" />
               </div>
               <div class="flex flex-col">
                 <span class="text-xl font-heading font-bold tracking-tight text-foreground leading-tight logo-text-outline">
@@ -97,6 +97,12 @@ import { LucideAngularModule } from 'lucide-angular';
   `,
 })
 export class FooterComponent {
+  getAssetPath(path: string): string {
+    const baseHref = document.querySelector('base')?.getAttribute('href') || '/';
+    const base = baseHref.endsWith('/') ? baseHref : baseHref + '/';
+    return base + path;
+  }
+
   quickLinks = [
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about-us' },

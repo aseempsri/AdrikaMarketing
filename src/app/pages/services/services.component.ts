@@ -50,6 +50,20 @@ const services = [
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
     features: ['Brand Identity', 'Logo Design', 'Visual Design Systems', 'Creative Collateral'],
   },
+  {
+    icon: 'layers',
+    title: 'Technical Solution',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    challenge: 'Inefficiencies are holding your business back?',
+    solution: 'We develop custom software solutions that streamline your operations, boost productivity, and eliminate bottlenecks. Our compelling reports and analytics help you make data-driven decisions, while our scalable systems grow with your business.',
+  },
+  {
+    icon: 'target',
+    title: 'Fundraising & Brand Strategy',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
+    challenge: 'Finding it hard to differentiate your brand and maximize support?',
+    solution: 'Our powerful brand strategies highlight your unique value, positioning you for success in a crowded market. We craft compelling narratives and investor-ready materials that attract funding and build lasting stakeholder confidence.',
+  },
 ];
 
 @Component({
@@ -71,20 +85,31 @@ const services = [
             >
               <div [class]="i % 2 === 1 ? 'md:order-2' : ''">
                 <div class="flex items-center gap-3 mb-3">
-                  <lucide-icon [name]="service.icon" class="text-primary" [size]="32" />
+                  <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/40 shrink-0">
+                    <lucide-icon [name]="service.icon" class="text-primary" [size]="28" />
+                  </div>
                   <h2 class="text-2xl md:text-3xl font-heading font-bold uppercase tracking-tight">
                     {{ service.title }}
                   </h2>
                 </div>
-                <p class="text-muted-foreground leading-relaxed">{{ service.desc }}</p>
-                <ul class="mt-4 space-y-2 mb-8">
-                  @for (f of service.features; track f) {
-                    <li class="flex items-center gap-2 text-sm text-foreground/80">
-                      <lucide-icon name="arrow-right" [size]="14" class="text-primary shrink-0" />
-                      {{ f }}
-                    </li>
-                  }
-                </ul>
+                @if (service.challenge && service.solution) {
+                  <p class="text-foreground font-semibold mb-2">
+                    <span class="text-primary">Challenge:</span> {{ service.challenge }}
+                  </p>
+                  <p class="text-muted-foreground leading-relaxed mb-8">
+                    <span class="text-primary font-semibold">Solution:</span> {{ service.solution }}
+                  </p>
+                } @else {
+                  <p class="text-muted-foreground leading-relaxed">{{ service.desc }}</p>
+                  <ul class="mt-4 space-y-2 mb-8">
+                    @for (f of service.features; track f) {
+                      <li class="flex items-center gap-2 text-sm text-foreground/80">
+                        <lucide-icon name="arrow-right" [size]="14" class="text-primary shrink-0" />
+                        {{ f }}
+                      </li>
+                    }
+                  </ul>
+                }
                 <a routerLink="/contact-us" appButton class="font-heading font-bold uppercase tracking-wider" size="lg">
                   Get Started <lucide-icon name="arrow-right" [size]="16" />
                 </a>
