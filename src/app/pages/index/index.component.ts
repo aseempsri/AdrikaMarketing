@@ -122,7 +122,7 @@ const awards = [
                   [class]="$index === currentSlide() ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-6 blur-sm pointer-events-none'"
                 >
                   <h1
-                    class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase tracking-tight leading-tight px-4 w-full drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase tracking-tight leading-tight px-4 w-full text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
                     style="word-break: normal; overflow-wrap: normal; hyphens: none;"
                   >
                     {{ slide.title }}
