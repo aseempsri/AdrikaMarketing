@@ -34,22 +34,13 @@ const companies = [
       <div class="h-screen w-[55%] m-0 p-0">
         <div class="grid grid-cols-2 h-full w-full" style="gap: 0; column-gap: 0;">
           @for (company of companies; track company.name) {
-            <div class="relative w-full h-full overflow-visible flex items-center justify-center m-0 p-0" style="aspect-ratio: 1;">
-              <div class="relative">
-                <!-- Glow effect behind image -->
-                <div 
-                  class="absolute inset-0 blur-3xl opacity-50"
-                  [style.background-image]="'url(' + getImagePath(company.logo) + ')'"
-                  style="background-size: contain; background-repeat: no-repeat; background-position: center; filter: blur(50px); transform: scale(1.8); z-index: 1;"
-                ></div>
-                <!-- Main image -->
-                <img
-                  [src]="getImagePath(company.logo)"
-                  [alt]="company.name"
-                  class="max-w-full max-h-full object-contain relative z-10 drop-shadow-[0_0_80px_rgba(255,140,0,0.9)]"
-                  (error)="onImageError($event)"
-                />
-              </div>
+            <div class="relative w-full h-full overflow-hidden flex items-center justify-center m-0 p-0" style="aspect-ratio: 1;">
+              <img
+                [src]="getImagePath(company.logo)"
+                [alt]="company.name"
+                class="max-w-full max-h-full object-contain"
+                (error)="onImageError($event)"
+              />
               <div
                 class="fallback-label hidden absolute inset-0 bg-card flex items-center justify-center"
               >
