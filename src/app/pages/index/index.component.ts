@@ -113,7 +113,7 @@ const awards = [
         <div class="absolute inset-0 bg-gradient-to-r from-background/75 via-background/40 to-transparent"></div>
         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_hsl(var(--primary)/0.05)_0%,_transparent_55%)]"></div>
 
-        <div class="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center min-h-screen">
+        <div class="container mx-auto px-4 md:px-6 relative z-10 flex flex-col items-center justify-center min-h-screen">
           <div class="max-w-4xl w-full text-center">
             <div class="relative min-h-[360px] md:min-h-[420px] lg:min-h-[480px] flex flex-col items-center justify-center">
               @for (slide of heroSlides; track $index) {
@@ -122,12 +122,12 @@ const awards = [
                   [class]="$index === currentSlide() ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-6 blur-sm pointer-events-none'"
                 >
                   <h1
-                    class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase tracking-tight leading-tight px-4 w-full text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                    class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-heading font-black uppercase tracking-tight leading-tight w-full text-center drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] px-2 md:px-4"
                     style="word-break: normal; overflow-wrap: normal; hyphens: none;"
                   >
                     {{ slide.title }}
                   </h1>
-                  <p class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary max-w-2xl mx-auto px-4 break-words drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+                  <p class="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary max-w-2xl mx-auto px-2 md:px-4 break-words drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)] text-center">
                     {{ slide.subtitle }}
                   </p>
                 </div>
