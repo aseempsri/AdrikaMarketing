@@ -4,6 +4,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { OurWorkComponent } from './pages/our-work/our-work.component';
+import { CollectiveComponent } from './pages/collective/collective.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
@@ -16,6 +17,7 @@ export const routes: Routes = [
       { path: 'about-us', component: AboutUsComponent },
       { path: 'services', component: ServicesComponent },
       { path: 'our-work', component: OurWorkComponent },
+      { path: 'collective', component: CollectiveComponent },
       { path: 'contact-us', component: ContactUsComponent },
     ],
   },
