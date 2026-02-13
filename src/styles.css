@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 35 100% 55%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 15%;
-    --muted-foreground: 220 10% 55%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 35 100% 55%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 0 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 95%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 35 100% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 50%;
 
     --radius: 0.25rem;
 
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 35 100% 55%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 35 100% 55%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 100% 50%;
   }
 }
 
@@ -63,7 +63,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-red-600 to-red-500;
   }
 }
 
@@ -76,9 +76,26 @@
   animation: marquee 30s linear infinite;
 }
 
+@keyframes marquee-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-marquee-infinite {
+  animation: marquee-infinite 16.5s linear infinite;
+  will-change: transform;
+}
+
 @media (max-width: 768px) {
   .animate-marquee {
-    animation: marquee 10s linear infinite;
+    animation: marquee 11s linear infinite;
+  }
+  .animate-marquee-infinite {
+    animation: marquee-infinite 13.2s linear infinite;
   }
 }
 
@@ -124,4 +141,213 @@
   .parallax-bg {
     background-attachment: scroll !important;
   }
+}
+
+@keyframes logo-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.logo-flow-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.logo-flow-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.4) 0%,
+    rgba(185, 28, 28, 0.3) 30%,
+    rgba(220, 38, 38, 0.2) 60%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: logo-flow 3s ease-in-out infinite, pulse-glow 2s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.logo-flow-container::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.2) 0%,
+    rgba(185, 28, 28, 0.15) 40%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: logo-flow 4s ease-in-out infinite reverse, pulse-glow 2.5s ease-in-out infinite;
+  z-index: -2;
+  filter: blur(12px);
+}
+
+@media (max-width: 768px) {
+  .logo-flow-container-mobile {
+    padding: 8px;
+  }
+  .logo-flow-container-mobile::before {
+    filter: blur(6px);
+  }
+  .logo-flow-container-mobile::after {
+    inset: -2px;
+    filter: blur(8px);
+  }
+}
+
+.logo-text-outline {
+  text-shadow: 
+    -2px -2px 4px rgba(0, 0, 0, 0.8),
+    2px -2px 4px rgba(0, 0, 0, 0.8),
+    -2px 2px 4px rgba(0, 0, 0, 0.8),
+    2px 2px 4px rgba(0, 0, 0, 0.8),
+    0 0 8px rgba(0, 0, 0, 0.9),
+    0 0 12px rgba(0, 0, 0, 0.7),
+    0 0 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes checkmarkScale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes checkmarkRotate {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes phoneCardSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  animation: modalSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.checkmark-container {
+  position: relative;
+}
+
+.checkmark-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.2) 0%, rgba(220, 38, 38, 0.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: checkmarkScale 0.6s cubic-bezier(0.22, 1, 0.36, 1), pulseGlow 2s ease-in-out infinite;
+  animation-delay: 0s, 0.6s;
+}
+
+.checkmark-icon {
+  animation: checkmarkRotate 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.phone-number-card {
+  animation: phoneCardSlide 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.phone-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.phone-number-card:hover .phone-icon-container {
+  background: rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.6);
+  transform: scale(1.1);
 }

@@ -11,9 +11,19 @@ import { LucideAngularModule } from 'lucide-angular';
       <div class="container mx-auto px-6 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <h3 class="text-xl font-heading font-bold mb-4">
-              ADRIKA<span class="text-primary"> MARKETING</span>
-            </h3>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-flow-container">
+                <img src="/logo.png" alt="Adrika Marketing Logo" class="h-[60px] w-auto object-contain relative z-10" />
+              </div>
+              <div class="flex flex-col">
+                <span class="text-xl font-heading font-bold tracking-tight text-foreground leading-tight logo-text-outline">
+                  Adrika Marketing
+                </span>
+                <span class="text-xs font-heading text-muted-foreground tracking-wide leading-tight">
+                  shaping the idea into brand
+                </span>
+              </div>
+            </div>
             <p class="text-muted-foreground text-sm leading-relaxed">
               A full-service digital marketing agency delivering integrated solutions that drive growth, engagement, and measurable results for brands across India and beyond.
             </p>
@@ -52,11 +62,14 @@ import { LucideAngularModule } from 'lucide-angular';
               </li>
               <li class="flex items-center gap-2">
                 <lucide-icon name="phone" [size]="16" class="shrink-0 text-primary" />
-                <span>+91 98765 43210</span>
+                <div class="flex flex-col">
+                  <span>+91-9318441235</span>
+                  <span>+91-9235777101</span>
+                </div>
               </li>
               <li class="flex items-center gap-2">
                 <lucide-icon name="mail" [size]="16" class="shrink-0 text-primary" />
-                <span>hello&#64;adrikamarketing.com</span>
+                <span>info&#64;adrika.co.in</span>
               </li>
             </ul>
             <div class="flex gap-3 mt-4">

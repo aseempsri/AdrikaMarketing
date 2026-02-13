@@ -8,30 +8,38 @@ const heroSlides = [
     title: 'DIGITAL MARKETING',
     subtitle:
       "Data-driven strategies that amplify your brand's digital presence and deliver measurable ROI.",
-    gradient: 'from-blue-900/40 via-background to-background',
+    gradient: 'from-red-900/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1572521165329-b197f9ea3da6?w=1920&q=80',
   },
   {
     title: 'EXPERIENTIAL MARKETING',
     subtitle: 'Creating unforgettable brand experiences that connect with audiences on a deeper level.',
-    gradient: 'from-purple-900/40 via-background to-background',
+    gradient: 'from-red-800/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1553173937-53ab846b1365?w=1920&q=80',
   },
   {
     title: 'LEAD GENERATION',
     subtitle: 'Qualified leads through targeted B2B campaigns, inside sales, and account-based marketing.',
-    gradient: 'from-emerald-900/40 via-background to-background',
+    gradient: 'from-red-900/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=1920&q=80',
   },
   {
     title: 'CONTENT MARKETING',
     subtitle: 'Compelling content strategies that tell your brand story and drive engagement across channels.',
-    gradient: 'from-orange-900/40 via-background to-background',
+    gradient: 'from-red-800/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1525504393201-8f144ab81077?w=1920&q=80',
   },
 ];
 
 const clientLogos = [
+  '/images/girnar finserv.png',
+  '/images/Go digit General Insurance Logo.png',
+  '/images/digit life insurance.jpg',
+  '/images/acko insurance.jpg',
+  '/images/kredit bee logo.png',
+  '/images/Cleartrip-Logo.png',
+  '/images/Jharkhand Government logo.jpg',
+  '/images/insurance dekho.png',
   'https://adrika.co.in/assets/images/clients/logo.png',
   ...Array.from({ length: 12 }, (_, i) =>
     `https://adrika.co.in/assets/images/clients/logo${i + 2}.png`,
@@ -78,12 +86,26 @@ const workItems = [
 ];
 
 const awards = [
-  'Best Digital Agency 2024',
-  'Marketing Excellence Award',
-  'Top 50 Agencies India',
-  'Content Innovation Award',
-  'Best B2B Campaign',
-  'Social Media Excellence',
+  {
+    category: 'Agency Excellence',
+    recognition: 'Best Digital Agency',
+    event: '2024',
+  },
+  {
+    category: 'Industry Recognition',
+    recognition: 'Top 50 Agencies India',
+    event: '2024',
+  },
+  {
+    category: 'Marketing Excellence',
+    recognition: 'Marketing Excellence Award',
+    event: '2024',
+  },
+  {
+    category: 'Content Innovation',
+    recognition: 'Content Innovation Award',
+    event: '2024',
+  },
 ];
 
 @Component({
@@ -210,17 +232,24 @@ const awards = [
         <div class="text-center mb-6">
           <p class="text-primary font-heading font-semibold uppercase tracking-widest text-sm">Brands We Work With</p>
         </div>
-        <div class="flex animate-marquee whitespace-nowrap items-center">
-          @for (logo of clientLogos; track $index) {
-            <div class="mx-10 flex items-center justify-center h-20 shrink-0">
-              <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-16 max-w-[182px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(255,140,0,0.7)] brightness-150 contrast-150 transition-all duration-300" />
-            </div>
-          }
-          @for (logo of clientLogos; track $index) {
-            <div class="mx-10 flex items-center justify-center h-20 shrink-0">
-              <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-16 max-w-[182px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(255,140,0,0.7)] brightness-150 contrast-150 transition-all duration-300" />
-            </div>
-          }
+        <div class="relative overflow-hidden">
+          <div class="flex animate-marquee-infinite whitespace-nowrap items-center w-max">
+            @for (logo of clientLogos; track $index) {
+              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
+                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              </div>
+            }
+            @for (logo of clientLogos; track $index) {
+              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
+                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              </div>
+            }
+            @for (logo of clientLogos; track $index) {
+              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
+                <img [src]="logo" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              </div>
+            }
+          </div>
         </div>
       </section>
 
@@ -235,11 +264,11 @@ const awards = [
             </h2>
           </div>
 
-          <div class="flex flex-wrap justify-center gap-3 mb-10">
+          <div class="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-3 mb-10 w-full max-w-md md:max-w-none mx-auto md:mx-0">
             @for (cat of categories; track cat) {
               <button
                 (click)="filter.set(cat)"
-                [class]="'px-5 py-2 rounded-full text-xs font-heading font-bold uppercase tracking-wider transition-colors ' + (filter() === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground hover:text-foreground')"
+                [class]="'w-full md:w-auto px-5 py-3 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors text-center ' + (filter() === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary text-muted-foreground hover:text-foreground')"
               >
                 {{ cat }}
               </button>
@@ -295,25 +324,35 @@ const awards = [
             execution delivered results that exceeded all expectations."
           </blockquote>
           <p class="mt-4 text-primary font-heading font-semibold uppercase tracking-wider text-sm">
-            — Marketing Director, Fortune 500 Company
+            — Marketing Director, Digit Insurance
           </p>
         </div>
       </section>
 
-      <section class="py-16 border-y border-border">
+      <section class="py-20 border-y border-border bg-secondary/20">
         <div class="container mx-auto px-6">
-          <p class="text-primary font-heading font-semibold uppercase tracking-widest text-sm mb-6 text-center">
+          <p class="text-primary font-heading font-semibold uppercase tracking-widest text-sm mb-12 text-center">
             Awards & Recognition
           </p>
-          <div class="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-            @for (award of awards; track award) {
-              <div
-                class="shrink-0 flex items-center gap-3 bg-secondary/30 border border-border rounded-lg px-6 py-4 hover:border-primary/30 transition-colors"
-              >
-                <lucide-icon name="award" class="text-primary shrink-0" [size]="24" />
-                <span class="font-heading font-bold text-sm uppercase tracking-wider whitespace-nowrap">{{
-                  award
-                }}</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            @for (award of awards; track award.recognition) {
+              <div class="flex flex-col items-center text-center">
+                <!-- Award Icon (Feather & Cup) -->
+                <div class="mb-4 relative">
+                  <img src="/images/award.png" alt="Award" class="w-16 h-16 object-contain" />
+                </div>
+                <!-- Award Category (Small, Light Gray) -->
+                <p class="text-xs font-heading uppercase tracking-wider text-muted-foreground mb-2">
+                  {{ award.category }}
+                </p>
+                <!-- Main Award Name (Large, Bold, Dark) -->
+                <p class="text-base font-heading font-bold uppercase tracking-tight text-foreground mb-2 leading-tight">
+                  {{ award.recognition }}
+                </p>
+                <!-- Event/Year (Small, Light Gray) -->
+                <p class="text-xs font-heading uppercase tracking-wider text-muted-foreground">
+                  {{ award.event }}
+                </p>
               </div>
             }
           </div>
@@ -359,10 +398,10 @@ export class IndexComponent implements OnInit, OnDestroy {
   ];
 
   gradientColors = [
-    'rgb(30 58 138 / 0.4)',
-    'rgb(88 28 135 / 0.4)',
-    'rgb(6 78 59 / 0.4)',
-    'rgb(194 65 12 / 0.4)',
+    'rgb(220 38 38 / 0.4)',
+    'rgb(185 28 28 / 0.4)',
+    'rgb(153 27 27 / 0.4)',
+    'rgb(127 29 29 / 0.4)',
   ];
 
   filteredWork = computed(() =>

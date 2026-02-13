@@ -18,13 +18,21 @@ const navLinks = [
   imports: [RouterLink, RouterLinkActive, LucideAngularModule],
   template: `
     <nav
-      [class]="cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', scrolled() ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent')"
+      [class]="cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-visible', scrolled() ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent')"
     >
-      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a routerLink="/" class="flex items-center gap-2">
-          <span class="text-2xl font-heading font-bold tracking-tight text-foreground">
-            ADRIKA<span class="text-primary"> MARKETING</span>
-          </span>
+      <div class="container mx-auto px-6 md:px-6 pl-8 md:pl-6 py-4 flex items-center justify-between overflow-visible">
+        <a routerLink="/" class="flex items-center gap-2 md:gap-3 min-w-0 flex-shrink-0">
+          <div class="logo-flow-container logo-flow-container-mobile">
+            <img src="/logo.png" alt="Adrika Marketing Logo" class="h-[44px] md:h-[60px] w-auto object-contain relative z-10" />
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-base sm:text-xl font-heading font-bold tracking-tight text-foreground leading-tight logo-text-outline">
+              Adrika Marketing
+            </span>
+            <span class="text-[10px] sm:text-xs font-heading text-muted-foreground tracking-wide leading-tight hidden sm:block">
+              shaping the idea into brand
+            </span>
+          </div>
         </a>
 
         <div class="hidden md:flex items-center gap-8">
