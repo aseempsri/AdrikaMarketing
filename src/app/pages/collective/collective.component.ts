@@ -55,14 +55,14 @@ const companies = [
       </div>
       
       <!-- Mobile: Vertical Stack -->
-      <div class="md:hidden w-full h-auto py-2 px-4" style="gap: 0;">
+      <div class="md:hidden w-full h-auto p-0">
         @for (company of companies; track company.name) {
-          <div class="relative w-full flex items-center justify-center" style="aspect-ratio: 1; min-height: 80vh;">
+          <div class="relative w-full flex items-center justify-center" style="aspect-ratio: 1;">
             <div class="relative w-full h-full flex items-center justify-center">
               <img
                 [src]="getImagePath(company.logo)"
                 [alt]="company.name"
-                class="max-w-full max-h-full object-contain"
+                class="w-full h-full object-contain"
                 (error)="onImageError($event)"
               />
               <div
