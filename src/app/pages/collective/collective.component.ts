@@ -55,7 +55,7 @@ const companies = [
       </div>
       
       <!-- Mobile: Vertical Stack -->
-      <div class="md:hidden w-full h-auto py-8 px-4 space-y-8">
+      <div class="md:hidden w-full h-auto py-2 px-4" style="gap: 0;">
         @for (company of companies; track company.name) {
           <div class="relative w-full flex items-center justify-center" style="aspect-ratio: 1; min-height: 80vh;">
             <div class="relative w-full h-full flex items-center justify-center">
