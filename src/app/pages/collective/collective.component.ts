@@ -31,7 +31,8 @@ const companies = [
     />
 
     <section class="min-h-screen p-0 m-0 w-full flex items-center justify-center">
-      <div class="h-screen w-[55%] m-0 p-0">
+      <!-- Desktop: 2x2 Grid -->
+      <div class="hidden md:flex h-screen w-[55%] m-0 p-0">
         <div class="grid grid-cols-2 h-full w-full" style="gap: 0; column-gap: 0;">
           @for (company of companies; track company.name) {
             <div class="relative w-full h-full overflow-hidden flex items-center justify-center m-0 p-0" style="aspect-ratio: 1;">
@@ -51,6 +52,29 @@ const companies = [
             </div>
           }
         </div>
+      </div>
+      
+      <!-- Mobile: Vertical Stack -->
+      <div class="md:hidden w-full h-auto py-8 px-4 space-y-8">
+        @for (company of companies; track company.name) {
+          <div class="relative w-full flex items-center justify-center" style="aspect-ratio: 1; min-height: 80vh;">
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img
+                [src]="getImagePath(company.logo)"
+                [alt]="company.name"
+                class="max-w-full max-h-full object-contain"
+                (error)="onImageError($event)"
+              />
+              <div
+                class="fallback-label hidden absolute inset-0 bg-card flex items-center justify-center"
+              >
+                <p class="text-primary text-xl font-heading font-bold uppercase">
+                  {{ company.name }}
+                </p>
+              </div>
+            </div>
+          </div>
+        }
       </div>
     </section>
   `,
