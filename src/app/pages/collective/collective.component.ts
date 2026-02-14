@@ -54,7 +54,7 @@ Curated homestays, mindful retreats, and journeys that restore, reconnect, and r
               [href]="item.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="block border border-border rounded-xl bg-card/50 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.35)] cursor-pointer"
+              class="block border border-border rounded-xl bg-card/50 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(245,158,11,0.35)] cursor-pointer"
             >
               <div
                 class="hidden md:flex items-center gap-8 lg:gap-12 p-8 lg:p-12"
@@ -99,7 +99,7 @@ Curated homestays, mindful retreats, and journeys that restore, reconnect, and r
             </a>
           } @else {
             <div
-              class="block border border-border rounded-xl bg-card/50 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(220,38,38,0.35)] cursor-default"
+              class="block border border-border rounded-xl bg-card/50 overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_40px_rgba(245,158,11,0.35)] cursor-default"
             >
               <div
                 class="hidden md:flex items-center gap-8 lg:gap-12 p-8 lg:p-12"

@@ -20,16 +20,16 @@ const navLinks = [
     <nav
       [class]="cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-visible', scrolled() ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent')"
     >
-      <div class="container mx-auto px-6 md:px-6 pl-8 md:pl-6 py-4 flex items-center justify-between overflow-visible">
+      <div class="container mx-auto px-6 md:px-6 pl-4 md:pl-6 py-4 flex items-center justify-between overflow-visible">
         <a routerLink="/" class="flex items-center gap-2 md:gap-3 min-w-0 flex-shrink-0">
           <div class="logo-flow-container logo-flow-container-mobile">
             <img [src]="getAssetPath('logo.png')" alt="Adrika Marketing Logo" class="h-[44px] md:h-[60px] w-auto object-contain relative z-10" />
           </div>
-          <div class="flex flex-col min-w-0">
+          <div class="flex flex-col min-w-0 text-left">
             <span class="text-base sm:text-xl font-heading font-bold tracking-tight text-foreground leading-tight logo-text-outline">
               Adrika Marketing
             </span>
-            <span class="text-[10px] sm:text-xs font-heading text-muted-foreground tracking-wide leading-tight hidden sm:block">
+            <span class="text-[10px] sm:text-xs font-heading text-muted-foreground tracking-wide leading-tight">
               shaping the idea into brand
             </span>
           </div>

@@ -8,25 +8,25 @@ const heroSlides = [
     title: 'DIGITAL MARKETING',
     subtitle:
       "Data-driven strategies that amplify your brand's digital presence and deliver measurable ROI.",
-    gradient: 'from-red-900/40 via-background to-background',
+    gradient: 'from-amber-900/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1572521165329-b197f9ea3da6?w=1920&q=80',
   },
   {
     title: 'EXPERIENTIAL MARKETING',
     subtitle: 'Creating unforgettable brand experiences that connect with audiences on a deeper level.',
-    gradient: 'from-red-800/40 via-background to-background',
+    gradient: 'from-amber-800/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1553173937-53ab846b1365?w=1920&q=80',
   },
   {
     title: 'LEAD GENERATION',
     subtitle: 'Qualified leads through targeted B2B campaigns, inside sales, and account-based marketing.',
-    gradient: 'from-red-900/40 via-background to-background',
+    gradient: 'from-amber-900/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?w=1920&q=80',
   },
   {
     title: 'CONTENT MARKETING',
     subtitle: 'Compelling content strategies that tell your brand story and drive engagement across channels.',
-    gradient: 'from-red-800/40 via-background to-background',
+    gradient: 'from-amber-800/40 via-background to-background',
     image: 'https://images.unsplash.com/photo-1525504393201-8f144ab81077?w=1920&q=80',
   },
 ];
@@ -236,17 +236,17 @@ const awards = [
           <div class="flex animate-marquee-infinite whitespace-nowrap items-center w-max">
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
               <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(220,38,38,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
               </div>
             }
           </div>
@@ -398,10 +398,10 @@ export class IndexComponent implements OnInit, OnDestroy {
   ];
 
   gradientColors = [
-    'rgb(220 38 38 / 0.4)',
-    'rgb(185 28 28 / 0.4)',
-    'rgb(153 27 27 / 0.4)',
-    'rgb(127 29 29 / 0.4)',
+    'rgb(245 158 11 / 0.4)',
+    'rgb(217 119 6 / 0.4)',
+    'rgb(180 83 9 / 0.4)',
+    'rgb(146 64 14 / 0.4)',
   ];
 
   filteredWork = computed(() =>
