@@ -33,6 +33,7 @@ const heroSlides = [
 
 const clientLogos = [
   '/images/girnar finserv.png',
+  '/images/mitigata.png',
   '/images/Go digit General Insurance Logo.png',
   '/images/digit life insurance.jpg',
   '/images/acko insurance.jpg',
@@ -235,18 +236,18 @@ const awards = [
         <div class="relative overflow-hidden">
           <div class="flex animate-marquee-infinite whitespace-nowrap items-center w-max">
             @for (logo of clientLogos; track $index) {
-              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              <div [class]="(logo.includes('mitigata') ? 'mx-4 md:mx-10 flex items-center justify-center h-[144px] md:h-[208px] shrink-0' : 'mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0') + (isDarkLogo(logo, $index) ? ' rounded-2xl bg-white/15 backdrop-blur-sm px-4 py-2 ring-1 ring-white/10' : '')">
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" [class]="(logo.includes('mitigata') ? 'h-[112px] md:h-[166px] max-w-[280px] md:max-w-[474px]' : 'h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px]') + ' w-auto object-contain transition-all duration-300 ' + (isDarkLogo(logo, $index) ? 'invert brightness-110 contrast-110 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]' : 'drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150')" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
-              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              <div [class]="(logo.includes('mitigata') ? 'mx-4 md:mx-10 flex items-center justify-center h-[144px] md:h-[208px] shrink-0' : 'mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0') + (isDarkLogo(logo, $index) ? ' rounded-2xl bg-white/15 backdrop-blur-sm px-4 py-2 ring-1 ring-white/10' : '')">
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" [class]="(logo.includes('mitigata') ? 'h-[112px] md:h-[166px] max-w-[280px] md:max-w-[474px]' : 'h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px]') + ' w-auto object-contain transition-all duration-300 ' + (isDarkLogo(logo, $index) ? 'invert brightness-110 contrast-110 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]' : 'drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150')" />
               </div>
             }
             @for (logo of clientLogos; track $index) {
-              <div class="mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0">
-                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" class="h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px] w-auto object-contain drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150 transition-all duration-300" />
+              <div [class]="(logo.includes('mitigata') ? 'mx-4 md:mx-10 flex items-center justify-center h-[144px] md:h-[208px] shrink-0' : 'mx-4 md:mx-10 flex items-center justify-center h-[72px] md:h-[104px] shrink-0') + (isDarkLogo(logo, $index) ? ' rounded-2xl bg-white/15 backdrop-blur-sm px-4 py-2 ring-1 ring-white/10' : '')">
+                <img [src]="getAssetPath(logo)" [alt]="'Brand partner ' + ($index + 1)" [class]="(logo.includes('mitigata') ? 'h-[112px] md:h-[166px] max-w-[280px] md:max-w-[474px]' : 'h-[56px] md:h-[83px] max-w-[140px] md:max-w-[237px]') + ' w-auto object-contain transition-all duration-300 ' + (isDarkLogo(logo, $index) ? 'invert brightness-110 contrast-110 drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] hover:drop-shadow-[0_0_20px_rgba(245,158,11,0.5)]' : 'drop-shadow-[0_0_20px_rgba(255,255,255,0.65)] hover:drop-shadow-[0_0_30px_rgba(245,158,11,0.7)] brightness-150 contrast-150')" />
               </div>
             }
           </div>
@@ -416,6 +417,14 @@ export class IndexComponent implements OnInit, OnDestroy {
     const base = baseHref.endsWith('/') ? baseHref : baseHref + '/';
     const cleanPath = path.startsWith('/') ? path.slice(1) : path;
     return base + cleanPath;
+  }
+
+  /** Indices of client logos that are dark/black (e.g. Home4Data from adrika.co.in). Add the index if needed. */
+  darkLogoIndices = new Set<number>([10]);
+
+  /** Logos that are dark/black and need a light background or invert to be visible */
+  isDarkLogo(logo: string, index: number): boolean {
+    return logo.toLowerCase().includes('home4data') || this.darkLogoIndices.has(index);
   }
 
   ngOnInit() {

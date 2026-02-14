@@ -158,8 +158,8 @@ export class ContactUsComponent {
   contactItems = [
     {
       icon: 'map-pin',
-      title: 'Our Office',
-      lines: ['123 Business Hub, Sector 62', 'Noida, Uttar Pradesh 201301', 'India'],
+      title: 'Visit Us',
+      lines: ['597, Airhe Road, Chandmari, Post- Lamhi', 'Varanasi, Uttar Pradesh - 221007', 'India'],
     },
     {
       icon: 'mail',
