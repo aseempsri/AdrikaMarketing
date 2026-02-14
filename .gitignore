@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Large backup/archive files
+*.zip
+public_html_old_*.zip
