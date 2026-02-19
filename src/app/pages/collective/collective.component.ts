@@ -6,7 +6,7 @@ const collectiveItems = [
     name: 'Adrika Marketing',
     logo: '/logo.png',
     logoLeft: true,
-    url: 'https://adrikamarketing.com',
+    url: 'https://www.adrikamarketing.com',
     text: `Founded in 2012, Adrika Marketing began as a small team of passionate marketers with a big vision — to bridge the gap between brands and their audiences through integrated, data-driven marketing solutions.
 
 Over the years, we've grown into a full-service agency with expertise spanning digital marketing, experiential events, lead generation, content strategy, and branding. Our journey has been defined by relentless innovation, deep client partnerships, and a commitment to delivering measurable results.`,
